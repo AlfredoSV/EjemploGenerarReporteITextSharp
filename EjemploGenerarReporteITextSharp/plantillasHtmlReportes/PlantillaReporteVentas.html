@@ -7,13 +7,15 @@
         table {
             width: 100%;
             border: solid #000000 1px;
-            margin: 0px;
-            padding: 0px;
+            border-spacing: 0px;
+            margin-top: 2px;
+            border: solid #cccccc .1px;
         }
 
         th, td {
-            border: solid #000000 1px;
+            border: solid #cccccc .1px;
             text-align: center;
+            margin: 0px;
         }
 
         #datosComple_td {
@@ -30,6 +32,10 @@
 
         .empresaNombre {
             width: 40%;
+        }
+
+        .headConceptos {
+            background-color: #cccccc;
         }
     </style>
 </head>
@@ -74,7 +80,7 @@
         <table>
 
 
-            <thead>
+            <thead class="headConceptos">
                 <tr>
                     <td>Nombre</td>
                     <td>Edad</td>
