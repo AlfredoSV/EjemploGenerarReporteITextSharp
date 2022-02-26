@@ -36,6 +36,8 @@ namespace EjemploGenerarReporteITextSharp.Controllers
 
                 var plantilla = new StreamReader(HttpContext.Server.MapPath("~/plantillasHtmlReportes/PlantillaReporteVentas.html"));
 
+
+
                 Image img = Image.GetInstance(new Uri(HttpContext.Server.MapPath("~/plantillasHtmlReportes/logo.jpg")));
                 img.ScaleToFit(80, 60);
                 img.Alignment = Image.UNDERLYING;
@@ -43,6 +45,10 @@ namespace EjemploGenerarReporteITextSharp.Controllers
                 pdfReporte.Add(img);
 
                 var con = plantilla.ReadToEnd();
+
+                con = con.Replace("@nombre", "Alfredo Sánchez");
+                con = con.Replace("@fechaSolicitud", DateTime.Now.ToString());
+
 
                 StringReader str = new StringReader(con);
 
